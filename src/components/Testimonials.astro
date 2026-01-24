@@ -1,0 +1,624 @@
+---
+const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
+---
+
+<section
+  id="clientes"
+  class="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-primary/5"
+>
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute -top-48 -right-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute -bottom-48 -left-48 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-float-slow"></div>
+    
+    <!-- Patrones decorativos -->
+    <div class="absolute top-20 left-20 opacity-[0.02] rotate-45">
+      <i class="fas fa-quote-left text-8xl text-primary"></i>
+    </div>
+    <div class="absolute bottom-20 right-20 opacity-[0.02] -rotate-12">
+      <i class="fas fa-heart text-7xl text-primary"></i>
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Header con animación -->
+    <div class="text-center mb-16 lg:mb-20 animate-fade-in-up">
+      <div class="inline-flex items-center justify-center gap-3 mb-6">
+        <span class="w-12 h-0.5 bg-gradient-to-r from-transparent to-primary/50"></span>
+        <span class="text-primary font-medium tracking-wider text-sm uppercase">Testimonios</span>
+        <span class="w-12 h-0.5 bg-gradient-to-l from-transparent to-primary/50"></span>
+      </div>
+      
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+        <span class="block mb-2">Clientes</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          Satisfechos
+        </span>
+      </h2>
+      
+      <p class="text-secondary/80 text-lg max-w-2xl mx-auto leading-relaxed">
+        Historias reales de personas que confiaron en Ginevra para hacer sus momentos especiales inolvidables.
+      </p>
+    </div>
+
+    <!-- Contenedor de testimonios -->
+    <div class="relative">
+      <!-- Flechas de navegación -->
+      <button 
+        id="prev-testimonial"
+        class="absolute -left-4 lg:-left-12 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary flex items-center justify-center hover:bg-white hover:scale-110 hover:shadow-lg transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Testimonio anterior"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <button 
+        id="next-testimonial"
+        class="absolute -right-4 lg:-right-12 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary flex items-center justify-center hover:bg-white hover:scale-110 hover:shadow-lg transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Siguiente testimonio"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Carrusel de testimonios -->
+      <div 
+        id="testimonials-container"
+        class="overflow-hidden"
+      >
+<div class="flex transition-transform duration-500 ease-out" id="testimonials-track">
+  <!-- Testimonio 1: Boda -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3 animate-fade-in-up" style="animation-delay: 0.1s">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Las flores de nuestra boda fueron simplemente mágicas. Ginevra capturó exactamente la visión que teníamos en mente. Los arreglos para la ceremonia y la recepción fueron elogiados por todos nuestros invitados."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            V
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Valeria Salazar</p>
+          <p class="text-sm text-secondary/70">Miraflores • Boda</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Octubre 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 2: Aniversario -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3 animate-fade-in-up" style="animation-delay: 0.2s">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Para nuestro 10° aniversario, quería algo especial. El arreglo personalizado con rosas blancas y lilas fue más hermoso de lo que imaginé. Mi esposa no paraba de sonreír. ¡Gracias por hacer nuestro día tan especial!"
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            R
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Rodrigo Mendoza</p>
+          <p class="text-sm text-secondary/70">San Isidro • 10° Aniversario</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Junio 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 3: Cumpleaños Empresarial -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3 animate-fade-in-up" style="animation-delay: 0.3s">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Contratamos a Ginevra para el 15° aniversario de nuestra empresa. Los arreglos corporativos fueron elegantes y profesionales. La atención al detalle y la puntualidad en la entrega fueron impecables. Totalmente recomendados."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            C
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Carla Fernández</p>
+          <p class="text-sm text-secondary/70">La Molina • Evento Corporativo</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Abril 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 4: Pedida de mano -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Cuando planeé la pedida de mano, sabía que las flores eran cruciales. El ramo de rosas rojas y blancas que crearon fue perfecto. Se notó la frescura y el cuidado. ¡Dijo que sí y las flores fueron parte fundamental del momento!"
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            M
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Miguel Ángel</p>
+          <p class="text-sm text-secondary/70">Barranco • Pedida de Mano</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Febrero 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 5: Graduación -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Para la graduación de mi hija quería algo especial. El arreglo con los colores de su universidad fue un detalle que la emocionó mucho. Las flores duraron más de 10 días y seguían hermosas. Calidad premium sin duda."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            S
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Susana Velarde</p>
+          <p class="text-sm text-secondary/70">Surco • Graduación Universitaria</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Diciembre 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 6: Día de la Madre -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Pedí un arreglo para el Día de la Madre estando fuera del país. La coordinación fue excelente y las flores llegaron puntuales a casa de mi mamá. Me enviaron fotos del arreglo y era exactamente lo que quería. Un servicio 10/10."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            J
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Javier Huamán</p>
+          <p class="text-sm text-secondary/70">Lince • Día de la Madre</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Mayo 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 7: Renovación de Votos -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "Para nuestros 25 años de matrimonio, renovamos votos en casa. Los arreglos florales transformaron nuestro jardín en un lugar de ensueño. La atención personalizada y la calidad de las flores superaron todas nuestras expectativas."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            G
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Graciela y Fernando</p>
+          <p class="text-sm text-secondary/70">Chacarilla • Renovación de Votos</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Marzo 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonio 8: San Valentín -->
+  <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+    <div class="group relative h-full bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-primary/10">
+      <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary/30 transition-colors duration-300">
+        <i class="fas fa-quote-right text-4xl"></i>
+      </div>
+      
+      <div class="flex gap-1 mb-4">
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-500"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+      
+      <p class="text-secondary/90 italic text-lg leading-relaxed mb-6">
+        "En San Valentín todos los floristas estaban saturados, pero Ginevra mantuvo su calidad a pesar de la alta demanda. El arreglo llegó puntual y mi novia quedó encantada. Definitivamente mi florista de confianza ahora."
+      </p>
+      
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-xl">
+            D
+          </div>
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center">
+            <i class="fas fa-check text-xs text-white"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-primary">Diego Castillo</p>
+          <p class="text-sm text-secondary/70">Jesús María • San Valentín</p>
+          <div class="flex items-center gap-2 mt-1">
+            <i class="fas fa-calendar text-primary/60 text-xs"></i>
+            <span class="text-xs text-secondary/60">Febrero 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <!-- Indicadores de paginación -->
+      <div class="flex justify-center gap-2 mt-8">
+        <button class="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-all duration-300 testimonial-dot active-dot"></button>
+        <button class="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-all duration-300 testimonial-dot"></button>
+        <button class="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-all duration-300 testimonial-dot"></button>
+        <button class="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-all duration-300 testimonial-dot"></button>
+        <button class="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-all duration-300 testimonial-dot"></button>
+      </div>
+    </div>
+
+    <!-- CTA para dejar testimonio -->
+    <div class="text-center mt-16 lg:mt-20 animate-fade-in-up" style="animation-delay: 0.4s">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-6 p-6 lg:p-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl backdrop-blur-sm border border-primary/10">
+        <div class="text-left">
+          <h4 class="font-serif text-xl lg:text-2xl text-primary mb-2">¿Ya recibiste tus flores?</h4>
+          <p class="text-secondary/80">Comparte tu experiencia con nosotros.</p>
+        </div>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group/cta relative bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+        >
+          <span class="relative z-10 flex items-center gap-3">
+            <i class="fas fa-comment-alt"></i>
+            <span>Dejar testimonio</span>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animaciones personalizadas */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Clases de animación */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  /* Animaciones reutilizadas */
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.05;
+    }
+    50% {
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Indicadores activos */
+  .active-dot {
+    background-color: var(--primary, #3b82f6) !important;
+    transform: scale(1.5);
+  }
+
+  /* Transiciones suaves */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    #testimonials-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    #testimonials-track {
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+    }
+    
+    .w-full {
+      scroll-snap-align: center;
+    }
+    
+    .absolute.-left-4,
+    .absolute.-right-4 {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const testimonialsContainer = document.getElementById('testimonials-container');
+    const testimonialsTrack = document.getElementById('testimonials-track');
+    const prevButton = document.getElementById('prev-testimonial') as HTMLButtonElement;
+    const nextButton = document.getElementById('next-testimonial') as HTMLButtonElement;
+    const dots = document.querySelectorAll('.testimonial-dot');
+    
+    if (!testimonialsContainer || !testimonialsTrack || !prevButton || !nextButton) return;
+    
+    const testimonials = testimonialsTrack.children;
+    const testimonialWidth = (testimonials[0] as HTMLElement).offsetWidth;
+    const gap = 24; // px-3 = 12px * 2 = 24px
+    let currentIndex = 0;
+    
+    // Función para actualizar la posición del carrusel
+    function updateCarousel() {
+      const translateX = -(currentIndex * (testimonialWidth + gap));
+      if (testimonialsTrack) {
+        testimonialsTrack.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      // Actualizar indicadores
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active-dot', index === currentIndex);
+      });
+      
+      // Actualizar estado de botones
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex >= testimonials.length - getVisibleTestimonials();
+    }
+    
+    // Calcular cuántos testimonios son visibles
+    function getVisibleTestimonials() {
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1; // sm
+    }
+    
+    // Event listeners para botones
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+    
+    nextButton.addEventListener('click', () => {
+      const maxIndex = testimonials.length - getVisibleTestimonials();
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+    
+    // Event listeners para dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+    
+    // Auto slide opcional (cada 5 segundos)
+    let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
+    
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        const maxIndex = testimonials.length - getVisibleTestimonials();
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+      }, 5000);
+    }
+    
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+    
+    // Iniciar auto slide
+    startAutoSlide();
+    
+    // Pausar auto slide al interactuar
+    testimonialsContainer.addEventListener('mouseenter', stopAutoSlide);
+    testimonialsContainer.addEventListener('mouseleave', startAutoSlide);
+    if (prevButton) {
+      prevButton.addEventListener('mouseenter', stopAutoSlide);
+      prevButton.addEventListener('mouseleave', startAutoSlide);
+    }
+    if (nextButton) {
+      nextButton.addEventListener('mouseenter', stopAutoSlide);
+      nextButton.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Manejo responsive
+    function handleResponsive() {
+      // En móviles, usar scroll nativo
+      if (window.innerWidth < 768) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
+        if (testimonialsContainer) {
+          testimonialsContainer.style.overflowX = 'auto';
+        }
+      } else {
+        prevButton.style.display = 'flex';
+        nextButton.style.display = 'flex';
+        if (testimonialsContainer) {
+          testimonialsContainer.style.overflowX = 'hidden';
+        }
+      }
+      updateCarousel();
+    }
+    
+    // Inicializar
+    handleResponsive();
+    window.addEventListener('resize', handleResponsive);
+    updateCarousel();
+  });
+</script>

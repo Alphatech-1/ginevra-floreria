@@ -1,0 +1,194 @@
+---
+const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
+---
+
+
+<!-- Botón de WhatsApp flotante -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+  
+  <!-- Botón para subir arriba -->
+  <button
+    id="scrollToTop"
+    aria-label="Volver arriba"
+    class="
+      w-12 h-12
+      rounded-full
+      bg-primary hover:bg-secondary
+      text-white
+      flex items-center justify-center
+      shadow-lg hover:shadow-xl
+      transition-all duration-300
+      transform hover:scale-110
+      opacity-0 translate-y-4
+      group
+    "
+  >
+    <i class="fas fa-chevron-up text-lg group-hover:-translate-y-0.5 transition-transform duration-300"></i>
+  </button>
+
+  <!-- Botón de WhatsApp -->
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chatear por WhatsApp"
+    class="
+      w-14 h-14
+      rounded-full
+      bg-gradient-to-br from-green-500 to-green-600
+      hover:from-green-600 hover:to-green-700
+      text-white
+      flex items-center justify-center
+      shadow-lg hover:shadow-xl hover:shadow-green-500/25
+      transition-all duration-300
+      transform hover:scale-110
+      group
+      animate-pulse-slow
+    "
+  >
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+    
+    <!-- Badge de notificación (opcional) -->
+    <span class="
+      absolute -top-1 -right-1
+      w-5 h-5
+      bg-red-500
+      rounded-full
+      flex items-center justify-center
+      text-xs font-bold
+      animate-ping
+    ">
+      <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+    </span>
+  </a>
+</div>
+
+<style>
+  /* Animaciones personalizadas */
+  @keyframes pulse-slow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+  }
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Clases de animación */
+  .animate-pulse-slow {
+    animation: pulse-slow 3s infinite;
+  }
+
+  .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Efecto de aparición para el botón de scroll */
+  .show-scroll-top {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .fixed {
+      bottom: 5rem;
+      right: 1rem;
+    }
+  }
+</style>
+
+<script>
+  declare const gtag: Function;
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elementos
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    const whatsappBtn = document.querySelector('a[href*="whatsapp"]');
+    
+    // Mostrar/ocultar botón de scroll to top
+    function toggleScrollTopButton() {
+      if (scrollToTopBtn) {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('show-scroll-top');
+        } else {
+          scrollToTopBtn.classList.remove('show-scroll-top');
+        }
+      }
+    }
+    
+    // Scroll suave hacia arriba
+    if (scrollToTopBtn) {
+      scrollToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    // Agregar efecto de clic al botón de WhatsApp
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', function(this: HTMLElement, e) {
+        // Efecto de clic visual
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+        
+        // Opcional: Enviar evento a Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'whatsapp_click', {
+            'event_category': 'contact',
+            'event_label': 'whatsapp_button'
+          });
+        }
+      });
+    }
+    
+    // Inicializar
+    toggleScrollTopButton();
+    window.addEventListener('scroll', toggleScrollTopButton);
+    
+    // Añadir tooltip en hover (solo desktop)
+    if (window.innerWidth > 768) {
+      // Tooltip para WhatsApp
+      if (whatsappBtn) {
+        whatsappBtn.addEventListener('mouseenter', function(this: HTMLElement) {
+          const tooltip = document.createElement('div');
+          tooltip.className = 'absolute right-16 bg-gray-900 text-white text-sm px-3 py-1 rounded whitespace-nowrap';
+          tooltip.textContent = 'Chatea con nosotros';
+          this.appendChild(tooltip);
+        });
+        
+        whatsappBtn.addEventListener('mouseleave', function(this: HTMLElement) {
+          const tooltip = this.querySelector('.absolute');
+          if (tooltip) tooltip.remove();
+        });
+      }
+      
+      // Tooltip para scroll top
+      if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('mouseenter', function(this: HTMLElement) {
+          const tooltip = document.createElement('div');
+          tooltip.className = 'absolute right-16 bg-gray-900 text-white text-sm px-3 py-1 rounded whitespace-nowrap';
+          tooltip.textContent = 'Volver arriba';
+          this.appendChild(tooltip);
+        });
+        
+        scrollToTopBtn.addEventListener('mouseleave', function(this: HTMLElement) {
+          const tooltip = this.querySelector('.absolute');
+          if (tooltip) tooltip.remove();
+        });
+      }
+    }
+  });
+</script>

@@ -1,0 +1,252 @@
+---
+const whatsappLink = "https://wa.me/51934809665"; // 
+const email = "ginevrafloreria@gmail.com";            // 
+const instagram = "https://instagram.com/ginevra.floral"; // 
+---
+
+
+<footer class="relative overflow-hidden bg-gradient-to-b from-white to-primary/5 pt-16 pb-8 border-t border-primary/10">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+    
+    <!-- Patrones florales sutiles -->
+    <div class="absolute top-10 left-10 opacity-[0.03]">
+      <i class="fas fa-leaf text-6xl text-primary rotate-45"></i>
+    </div>
+    <div class="absolute bottom-10 right-10 opacity-[0.03]">
+      <i class="fas fa-spa text-6xl text-primary -rotate-12"></i>
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-12">
+      
+      <!-- Marca y descripción -->
+      <div class="lg:col-span-1 animate-fade-in-up">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="font-serif text-3xl lg:text-4xl text-primary tracking-tight">
+            Ginevra
+          </div>
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-primary/10 text-primary">
+            Florería
+          </span>
+        </div>
+        <p class="text-secondary/80 leading-relaxed mb-6 max-w-md">
+          Flores que transmiten emociones reales. Creando momentos inolvidables a través del arte floral desde antaño.
+        </p>
+        
+
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div class="lg:col-span-1 animate-fade-in-up" style="animation-delay: 0.1s">
+        <h4 class="font-serif text-xl text-primary mb-6">Navegación</h4>
+        <ul class="space-y-4">
+          <li>
+            <a 
+              href="#inicio" 
+              class="flex items-center gap-2 text-secondary/80 hover:text-primary transition-all duration-300 hover:translate-x-2 group"
+            >
+              <i class="fas fa-chevron-right text-primary/60 text-xs group-hover:text-primary"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#nosotros" 
+              class="flex items-center gap-2 text-secondary/80 hover:text-primary transition-all duration-300 hover:translate-x-2 group"
+            >
+              <i class="fas fa-chevron-right text-primary/60 text-xs group-hover:text-primary"></i>
+              <span>Sobre Nosotros</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#catalogo" 
+              class="flex items-center gap-2 text-secondary/80 hover:text-primary transition-all duration-300 hover:translate-x-2 group"
+            >
+              <i class="fas fa-chevron-right text-primary/60 text-xs group-hover:text-primary"></i>
+              <span>Catálogo</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#faq" 
+              class="flex items-center gap-2 text-secondary/80 hover:text-primary transition-all duration-300 hover:translate-x-2 group"
+            >
+              <i class="fas fa-chevron-right text-primary/60 text-xs group-hover:text-primary"></i>
+              <span>Preguntas Frecuentes</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#contacto" 
+              class="flex items-center gap-2 text-secondary/80 hover:text-primary transition-all duration-300 hover:translate-x-2 group"
+            >
+              <i class="fas fa-chevron-right text-primary/60 text-xs group-hover:text-primary"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Información de contacto -->
+      <div class="lg:col-span-1 animate-fade-in-up" style="animation-delay: 0.2s">
+        <h4 class="font-serif text-xl text-primary mb-6">Contacto</h4>
+        <div class="space-y-4 mb-6">
+          <a 
+            href={whatsappLink}
+            target="_blank"
+            class="flex items-center gap-3 text-secondary/80 hover:text-primary transition-all duration-300 group"
+          >
+            <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fab fa-whatsapp text-green-600"></i>
+            </div>
+            <div>
+              <div class="font-medium">WhatsApp</div>
+              <div class="text-sm">+51 934 809665</div>
+            </div>
+          </a>
+          
+          <a 
+            href={`mailto:${email}`}
+            class="flex items-center gap-3 text-secondary/80 hover:text-primary transition-all duration-300 group"
+          >
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-envelope text-primary"></i>
+            </div>
+            <div>
+              <div class="font-medium">Correo</div>
+              <div class="text-sm">{email}</div>
+            </div>
+          </a>
+          
+          <div class="flex items-center gap-3 text-secondary/80">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <i class="fas fa-clock text-primary"></i>
+            </div>
+            <div>
+              <div class="font-medium">Horarios</div>
+              <div class="text-sm">Lun-Vie: 9AM - 8PM</div>
+              <div class="text-sm">Sábados y Domingos: 10AM - 6PM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div>
+          <h5 class="font-medium text-primary mb-3">Síguenos</h5>
+          <div class="flex gap-4">
+            <a 
+              href={instagram}
+              target="_blank"
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white flex items-center justify-center hover:shadow-lg hover:scale-110 transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            
+            
+            <a 
+              href="http://tiktok.com/@ginevra.floral"
+              target="_blank"
+              class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:shadow-lg hover:scale-110 transition-all duration-300"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Línea divisoria -->
+    <div class="border-t border-primary/10 my-8"></div>
+
+    <!-- Información inferior -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="text-sm text-secondary/70 mb-2">
+          © {new Date().getFullYear()} Ginevra · Florería artesanal
+        </div>
+        
+      </div>
+      
+      <div class="flex items-center gap-2 text-sm text-secondary/70">
+        <i class="fas fa-heart text-red-500 animate-pulse"></i>
+        <span>Hecho con amor por <a target="_blank" href="https://alfhatec.com" class="hover:text-primary transition-colors duration-300">Alfhatec</a></span>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <!-- Métodos de pago -->
+        <div class="flex gap-2">
+          <div class="w-8 h-5 bg-purple-600 rounded border border-purple-200 flex items-center justify-center">
+            <span class="text-xs font-bold text-white-600">Yape</span>
+          </div>
+          <div class="w-8 h-5 bg-blue-600 rounded border border-gray-200 flex items-center justify-center">
+            <span class="text-xs font-bold text-white-600">Plin</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</footer>
+
+<style>
+  /* Animación de entrada */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Animación de pulso para el corazón */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* Efectos de hover suaves */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+  }
+</style>

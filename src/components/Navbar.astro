@@ -1,0 +1,178 @@
+<nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Logo mejorado -->
+      <div class="flex-shrink-0">
+        <a href="#" class="font-serif text-2xl md:text-3xl text-primary tracking-tight hover:scale-105 transition-transform duration-300">
+          Ginevra
+        </a>
+      </div>
+
+      <!-- Menú desktop mejorado -->
+      <div class="hidden md:flex items-center space-x-1">
+        <div class="relative flex items-center space-x-1 bg-gray-50/50 rounded-full p-1 shadow-inner">
+          <a href="#inicio" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Inicio
+            <span class="nav-underline"></span>
+          </a>
+          <a href="#nosotros" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Nosotros
+            <span class="nav-underline"></span>
+          </a>
+          <a href="#clientes" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Testimonios
+            <span class="nav-underline"></span>
+          </a>
+          <a href="#catalogo" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Galería
+            <span class="nav-underline"></span>
+          </a>
+          <a href="#faq" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Preguntas
+            <span class="nav-underline"></span>
+          </a>
+          <a href="#contacto" 
+             class="nav-link px-6 py-2 rounded-full text-secondary font-medium hover:text-primary transition-all duration-300 hover:bg-white hover:shadow-md relative group">
+            Contacto
+            <span class="nav-underline"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Botón móvil -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" 
+                class="text-secondary hover:text-primary p-2 rounded-lg hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil mejorado -->
+  <div id="mobile-menu" 
+       class="md:hidden absolute top-16 inset-x-0 bg-white/95 backdrop-blur-md shadow-lg transform transition-all duration-300 ease-in-out origin-top opacity-0 scale-y-0 -translate-y-4">
+    <div class="px-4 py-3 space-y-1">
+      <a href="#inicio" 
+         class="mobile-nav-link block px-4 py-3 rounded-lg text-secondary font-medium hover:text-primary hover:bg-gray-50 transition-all duration-300 transform hover:translate-x-2">
+        Inicio
+      </a>
+      <a href="#nosotros" 
+         class="mobile-nav-link block px-4 py-3 rounded-lg text-secondary font-medium hover:text-primary hover:bg-gray-50 transition-all duration-300 transform hover:translate-x-2">
+        Nosotros
+      </a>
+      <a href="#faq" 
+         class="mobile-nav-link block px-4 py-3 rounded-lg text-secondary font-medium hover:text-primary hover:bg-gray-50 transition-all duration-300 transform hover:translate-x-2">
+        Preguntas
+      </a>
+      <a href="#contacto" 
+         class="mobile-nav-link block px-4 py-3 rounded-lg text-secondary font-medium hover:text-primary hover:bg-gray-50 transition-all duration-300 transform hover:translate-x-2">
+        Contacto
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Animación del subrayado elegante */
+  .nav-underline {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary, #560B18), var(--primary, #560B18));
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover .nav-underline {
+    width: 40px;
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+  .nav-link.active .nav-underline {
+    width: 40px;
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+  /* Animaciones para el menú móvil */
+  .mobile-menu-open {
+    opacity: 1 !important;
+    transform: scaleY(1) translateY(0) !important;
+  }
+  
+  /* Animación para el botón hamburguesa */
+  .hamburger-active svg {
+    transform: rotate(90deg);
+  }
+  
+  .hamburger-active path:nth-child(1),
+  .hamburger-active path:nth-child(3) {
+    transform-origin: center;
+  }
+</style>
+
+<script>
+  // Control del menú móvil
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const desktopLinks = document.querySelectorAll('.nav-link');
+    
+    if (!mobileMenuButton || !mobileMenu) return;
+    
+    // Toggle del menú móvil
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('mobile-menu-open');
+      mobileMenuButton.classList.toggle('hamburger-active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace móvil
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenuButton.classList.remove('hamburger-active');
+        
+        // Marcar como activo
+        desktopLinks.forEach(dLink => dLink.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+    
+    // Marcar enlaces activos en desktop
+    desktopLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        desktopLinks.forEach(dLink => dLink.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+    
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(event) {
+      if (!mobileMenu.contains(event.target as Node) && !mobileMenuButton.contains(event.target as Node)) {
+        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenuButton.classList.remove('hamburger-active');
+      }
+    });
+    
+    // Cerrar menú con ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenuButton.classList.remove('hamburger-active');
+      }
+    });
+  });
+</script>

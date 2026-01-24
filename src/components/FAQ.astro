@@ -1,0 +1,509 @@
+---
+const whatsappLink = "https://wa.me/51934809665";
+---
+
+<section
+  id="faq"
+  class="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-primary/3"
+>
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-0 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-1/3 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl animate-float-medium"></div>
+    
+    <!-- Patrones florales sutiles -->
+    <div class="absolute top-20 left-20 opacity-[0.02] rotate-45">
+      <i class="fas fa-seedling text-6xl text-primary"></i>
+    </div>
+    <div class="absolute bottom-20 right-20 opacity-[0.02] -rotate-12">
+      <i class="fas fa-leaf text-5xl text-primary"></i>
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <!-- Header con animación -->
+    <div class="text-center mb-16 lg:mb-20 animate-fade-in-up">
+      <div class="inline-flex items-center justify-center gap-3 mb-6">
+        <span class="w-16 h-0.5 bg-gradient-to-r from-transparent to-primary/50"></span>
+        <span class="text-primary font-medium tracking-wider text-sm uppercase">FAQ</span>
+        <span class="w-16 h-0.5 bg-gradient-to-l from-transparent to-primary/50"></span>
+      </div>
+      
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+        Preguntas
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary block lg:inline">
+          frecuentes
+        </span>
+      </h2>
+      
+      <p class="text-secondary/80 text-lg max-w-2xl mx-auto leading-relaxed">
+        Encuentra respuestas a las dudas más comunes sobre nuestros servicios y arreglos florales.
+      </p>
+    </div>
+
+    <!-- Contenedor de preguntas con animaciones -->
+    <div class="space-y-4 lg:space-y-6">
+      <!-- Pregunta 1 -->
+      <div class="animate-fade-in-up" style="animation-delay: 0.1s">
+        <div class="group relative">
+          <input type="checkbox" id="faq-1" class="peer hidden" />
+          <label 
+            for="faq-1"
+            class="flex items-center justify-between p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-2xl lg:rounded-3xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 border border-primary/10 hover:border-primary/30 peer-checked:bg-white peer-checked:shadow-2xl peer-checked:border-primary/20"
+          >
+            <div class="flex items-center gap-4 lg:gap-6">
+              <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-truck text-primary text-lg lg:text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg lg:text-xl text-primary mb-1">
+                  ¿Realizan envíos a domicilio?
+                </h3>
+                <p class="text-secondary/70 text-sm hidden sm:block">
+                  Información sobre nuestro servicio de delivery
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary text-sm font-medium hidden sm:block transition-all duration-300 peer-checked:opacity-0">
+                Ver respuesta
+              </span>
+              <i class="fas fa-chevron-down text-primary text-lg transition-transform duration-500 peer-checked:rotate-180 group-hover:scale-125"></i>
+            </div>
+          </label>
+          
+          <!-- Contenido desplegable -->
+          <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+            <div class="p-6 lg:p-8 pt-4 lg:pt-6 bg-white/60 backdrop-blur-sm rounded-b-2xl lg:rounded-b-3xl border-t border-primary/10">
+              <div class="flex gap-4 lg:gap-6">
+                <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-green-500/10 items-center justify-center flex-shrink-0">
+                  <i class="fas fa-check text-green-600 text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-secondary/90 leading-relaxed lg:leading-loose">
+                    Sí, realizamos <span class="font-semibold text-primary">envíos a domicilio</span> coordinados previamente. 
+                    Cada envío es cuidadosamente preparado para asegurar que el arreglo floral llegue en perfectas condiciones. 
+                    Trabajamos con mensajería especializada que entiende la delicadeza de nuestros productos.
+                  </p>
+                  
+                  <!-- Información adicional -->
+                  <div class="grid sm:grid-cols-2 gap-4 mt-6">
+                    <div class="flex items-center gap-3 bg-white/50 rounded-xl p-3">
+                      <i class="fas fa-map-marker-alt text-primary"></i>
+                      <div>
+                        <div class="text-sm font-medium text-primary">Zonas de cobertura</div>
+                        <div class="text-xs text-secondary/70">Lima Metropolitana</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 rounded-xl p-3">
+                      <i class="fas fa-clock text-primary"></i>
+                      <div>
+                        <div class="text-sm font-medium text-primary">Horarios</div>
+                        <div class="text-xs text-secondary/70">9:00 AM - 8:00 PM</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="animate-fade-in-up" style="animation-delay: 0.2s">
+        <div class="group relative">
+          <input type="checkbox" id="faq-2" class="peer hidden" />
+          <label 
+            for="faq-2"
+            class="flex items-center justify-between p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-2xl lg:rounded-3xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 border border-primary/10 hover:border-primary/30 peer-checked:bg-white peer-checked:shadow-2xl peer-checked:border-primary/20"
+          >
+            <div class="flex items-center gap-4 lg:gap-6">
+              <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-palette text-primary text-lg lg:text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg lg:text-xl text-primary mb-1">
+                  ¿Puedo personalizar un arreglo floral?
+                </h3>
+                <p class="text-secondary/70 text-sm hidden sm:block">
+                  Sobre diseños personalizados y únicos
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary text-sm font-medium hidden sm:block transition-all duration-300 peer-checked:opacity-0">
+                Ver respuesta
+              </span>
+              <i class="fas fa-chevron-down text-primary text-lg transition-transform duration-500 peer-checked:rotate-180 group-hover:scale-125"></i>
+            </div>
+          </label>
+          
+          <!-- Contenido desplegable -->
+          <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+            <div class="p-6 lg:p-8 pt-4 lg:pt-6 bg-white/60 backdrop-blur-sm rounded-b-2xl lg:rounded-b-3xl border-t border-primary/10">
+              <div class="flex gap-4 lg:gap-6">
+                <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-green-500/10 items-center justify-center flex-shrink-0">
+                  <i class="fas fa-check text-green-600 text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-secondary/90 leading-relaxed lg:leading-loose mb-4">
+                    ¡Claro que sí! En <span class="font-semibold text-primary">Ginevra</span> nos especializamos en crear 
+                    arreglos personalizados según la ocasión, colores, estilo y presupuesto que desees. 
+                    Nuestros diseñadores florales trabajarán contigo para crear una pieza única y significativa.
+                  </p>
+                  
+                  <!-- Proceso de personalización -->
+                  <div class="bg-gradient-to-r from-primary/5 to-transparent rounded-xl p-4">
+                    <h4 class="font-medium text-primary mb-3 flex items-center gap-2">
+                      <i class="fas fa-list-ol"></i>
+                      Proceso de personalización:
+                    </h4>
+                    <ol class="space-y-3">
+                      <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center">1</span>
+                        <span class="text-secondary/80 text-sm">Contáctanos por WhatsApp con tus ideas</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center">2</span>
+                        <span class="text-secondary/80 text-sm">Nuestro diseñador te asesora</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center">3</span>
+                        <span class="text-secondary/80 text-sm">Aprobación del diseño final</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center">4</span>
+                        <span class="text-secondary/80 text-sm">Creación y entrega del arreglo</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="animate-fade-in-up" style="animation-delay: 0.3s">
+        <div class="group relative">
+          <input type="checkbox" id="faq-3" class="peer hidden" />
+          <label 
+            for="faq-3"
+            class="flex items-center justify-between p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-2xl lg:rounded-3xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 border border-primary/10 hover:border-primary/30 peer-checked:bg-white peer-checked:shadow-2xl peer-checked:border-primary/20"
+          >
+            <div class="flex items-center gap-4 lg:gap-6">
+              <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-calendar-alt text-primary text-lg lg:text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg lg:text-xl text-primary mb-1">
+                  ¿Con cuánta anticipación debo hacer mi pedido?
+                </h3>
+                <p class="text-secondary/70 text-sm hidden sm:block">
+                  Tiempos de preparación y entrega
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary text-sm font-medium hidden sm:block transition-all duration-300 peer-checked:opacity-0">
+                Ver respuesta
+              </span>
+              <i class="fas fa-chevron-down text-primary text-lg transition-transform duration-500 peer-checked:rotate-180 group-hover:scale-125"></i>
+            </div>
+          </label>
+          
+          <!-- Contenido desplegable -->
+          <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+            <div class="p-6 lg:p-8 pt-4 lg:pt-6 bg-white/60 backdrop-blur-sm rounded-b-2xl lg:rounded-b-3xl border-t border-primary/10">
+              <div class="flex gap-4 lg:gap-6">
+                <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-green-500/10 items-center justify-center flex-shrink-0">
+                  <i class="fas fa-check text-green-600 text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-secondary/90 leading-relaxed lg:leading-loose mb-4">
+                    Para garantizar la mejor selección de flores y atención personalizada, 
+                    recomendamos realizar el pedido con al menos 
+                    <span class="font-semibold text-primary">24 horas de anticipación</span>.
+                  </p>
+                  
+                  <!-- Tabla de tiempos -->
+                  <div class="overflow-hidden rounded-xl border border-primary/10">
+                    <table class="w-full">
+                      <thead class="bg-primary/5">
+                        <tr>
+                          <th class="text-left p-3 text-sm font-medium text-primary">Tipo de pedido</th>
+                          <th class="text-left p-3 text-sm font-medium text-primary">Anticipación mínima</th>
+                          <th class="text-left p-3 text-sm font-medium text-primary">Estado</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-primary/10">
+                        <tr class="hover:bg-white/50">
+                          <td class="p-3 text-sm text-secondary/80">Arreglo estándar</td>
+                          <td class="p-3 text-sm font-medium text-primary">24 horas</td>
+                          <td class="p-3">
+                            <span class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-600">
+                              <i class="fas fa-circle text-[8px]"></i>
+                              Disponible
+                            </span>
+                          </td>
+                        </tr>
+                        <tr class="hover:bg-white/50">
+                          <td class="p-3 text-sm text-secondary/80">Pedido personalizado</td>
+                          <td class="p-3 text-sm font-medium text-primary">48 horas</td>
+                          <td class="p-3">
+                            <span class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-600">
+                              <i class="fas fa-circle text-[8px]"></i>
+                              Consultar
+                            </span>
+                          </td>
+                        </tr>
+                        <tr class="hover:bg-white/50">
+                          <td class="p-3 text-sm text-secondary/80">Eventos especiales</td>
+                          <td class="p-3 text-sm font-medium text-primary">72 horas</td>
+                          <td class="p-3">
+                            <span class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-600">
+                              <i class="fas fa-circle text-[8px]"></i>
+                              Reservar
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="mt-4 text-sm text-secondary/70 flex items-center gap-2">
+                    <i class="fas fa-info-circle text-primary"></i>
+                    Para pedidos urgentes (mismo día), contáctanos directamente por WhatsApp.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 (nueva) -->
+      <div class="animate-fade-in-up" style="animation-delay: 0.4s">
+        <div class="group relative">
+          <input type="checkbox" id="faq-4" class="peer hidden" />
+          <label 
+            for="faq-4"
+            class="flex items-center justify-between p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-2xl lg:rounded-3xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 border border-primary/10 hover:border-primary/30 peer-checked:bg-white peer-checked:shadow-2xl peer-checked:border-primary/20"
+          >
+            <div class="flex items-center gap-4 lg:gap-6">
+              <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-question-circle text-primary text-lg lg:text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg lg:text-xl text-primary mb-1">
+                  ¿Qué métodos de pago aceptan?
+                </h3>
+                <p class="text-secondary/70 text-sm hidden sm:block">
+                  Opciones de pago disponibles
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary text-sm font-medium hidden sm:block transition-all duration-300 peer-checked:opacity-0">
+                Ver respuesta
+              </span>
+              <i class="fas fa-chevron-down text-primary text-lg transition-transform duration-500 peer-checked:rotate-180 group-hover:scale-125"></i>
+            </div>
+          </label>
+          
+          <!-- Contenido desplegable -->
+          <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+            <div class="p-6 lg:p-8 pt-4 lg:pt-6 bg-white/60 backdrop-blur-sm rounded-b-2xl lg:rounded-b-3xl border-t border-primary/10">
+              <div class="flex gap-4 lg:gap-6">
+                <div class="hidden sm:flex w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-green-500/10 items-center justify-center flex-shrink-0">
+                  <i class="fas fa-check text-green-600 text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-secondary/90 leading-relaxed lg:leading-loose mb-4">
+                    Aceptamos múltiples métodos de pago para tu comodidad. 
+                    Puedes pagar mediante transferencia bancaria, Yape, Plin
+                    o en efectivo al momento de la entrega.
+                  </p>
+                  
+                  <!-- Métodos de pago -->
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="bg-white rounded-xl p-3 border border-primary/10 flex flex-col items-center justify-center">
+                      <i class="fas fa-university text-2xl text-primary mb-2"></i>
+                      <span class="text-xs font-medium text-secondary">Transferencia</span>
+                    </div>
+                    <div class="bg-white rounded-xl p-3 border border-primary/10 flex flex-col items-center justify-center">
+                      <i class="fab fa-whatsapp text-2xl text-green-600 mb-2"></i>
+                      <span class="text-xs font-medium text-secondary">Yape/Plin</span>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-3 border border-primary/10 flex flex-col items-center justify-center">
+                      <i class="fas fa-money-bill-wave text-2xl text-green-600 mb-2"></i>
+                      <span class="text-xs font-medium text-secondary">Efectivo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA para preguntas adicionales -->
+    <div class="text-center mt-12 lg:mt-16 animate-fade-in-up" style="animation-delay: 0.5s">
+      <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 lg:p-10 backdrop-blur-sm border border-primary/10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="text-left">
+            <h4 class="font-serif text-xl lg:text-2xl text-primary mb-2">
+              ¿Tienes otra pregunta?
+            </h4>
+            <p class="text-secondary/80">
+              Escríbenos directamente por WhatsApp y te responderemos al instante.
+            </p>
+          </div>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/cta relative bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 whitespace-nowrap flex items-center gap-3"
+          >
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span class="relative z-10">Consultar por WhatsApp</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 rounded-full opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animaciones personalizadas */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.05;
+    }
+    50% {
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes floatMedium {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  /* Clases de animación */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: floatMedium 5s ease-in-out infinite;
+  }
+
+  /* Estilos para el acordeón */
+  .peer:checked + label {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  /* Suavizar transiciones */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mejoras para tablas */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* Efectos de sombra mejorados */
+  .shadow-lg {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-xl {
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 640px) {
+    .backdrop-blur-sm {
+      backdrop-filter: blur(4px);
+    }
+  }
+</style>
+
+<script>
+  // Optional: Add smooth behavior for FAQ items
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('input[type="checkbox"]');
+    
+    // Close other items when one is opened (optional behavior)
+    faqItems.forEach(item => {
+      item.addEventListener('change', function(this: HTMLInputElement) {
+        if (this.checked && window.innerWidth < 1024) {
+          // On mobile, close other items when one opens
+          faqItems.forEach(otherItem => {
+            if (otherItem !== this && (otherItem as HTMLInputElement).checked) {
+              (otherItem as HTMLInputElement).checked = false;
+            }
+          });
+        }
+      });
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        // Close all FAQ items when ESC is pressed
+        faqItems.forEach(item => {
+          (item as HTMLInputElement).checked = false;
+        });
+      }
+    });
+  });
+</script>

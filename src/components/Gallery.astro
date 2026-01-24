@@ -1,0 +1,323 @@
+---
+const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
+---
+
+
+<section id="catalogo" class="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-primary/5">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute -top-48 -right-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute -bottom-48 -left-48 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-float-slow"></div>
+    
+    <!-- Patrones florales decorativos -->
+    <div class="absolute top-1/4 left-10 opacity-[0.03] rotate-12">
+      <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12,2L15.09,8.26L22,9.27L17,14.14L18.18,21.02L12,17.77L5.82,21.02L7,14.14L2,9.27L8.91,8.26L12,2Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Header con animación -->
+    <div class="text-center mb-16 lg:mb-20 animate-fade-in-up">
+      <div class="inline-flex items-center gap-3 mb-4">
+        <span class="w-12 h-0.5 bg-gradient-to-r from-transparent to-primary"></span>
+        <span class="text-primary font-medium tracking-wider text-sm uppercase">Colección</span>
+        <span class="w-12 h-0.5 bg-gradient-to-l from-transparent to-primary"></span>
+      </div>
+      
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+        <span class="block mb-2">Nuestro catálogo</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          floral exclusivo
+        </span>
+      </h2>
+      
+      <p class="text-secondary/80 text-lg max-w-2xl mx-auto leading-relaxed">
+        Descubre nuestras creaciones más destacadas, en esta temporada de San Valentín.
+      </p>
+    </div>
+
+    <!-- Galería de productos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {[
+        {
+  front: "/galeria-1.webp",
+  title: "GINEVRA + CHOCOLATE LA IBÉRICA 110GR",
+  price: "S/ 249.90",
+  description: "Exquisito arreglo floral premium acompañado del famoso chocolate La Ibérica. Perfecto para ocasiones especiales y regavidaos empresariales."
+},
+{
+  front: "/galeria-2.webp",
+  title: "ESPIRAL DE MARGARITAS",
+  price: "S/ 199.90",
+  description: "Diseño en espiral con margaritas frescas que simbolizan pureza e inocencia. Perfecto para cumpleaños y celebraciones alegres."
+},
+{
+  front: "/galeria-3.webp",
+  title: "ELAIA",
+  price: "S/ 189.90",
+  description: "Composición elegante con tonos tierra y texturas naturales. Nombre griego que significa 'olivo', símbolo de paz y prosperidad."
+},
+{
+  front: "/galeria-4.webp",
+  title: "AMBAR",
+  price: "S/ 159.90",
+  description: "Tonos ámbar y dorados que capturan la calidez del atardecer. Ideal para decorar interiores y crear ambientes acogedores."
+},
+{
+  front: "/galeria-5.webp",
+  title: "RUBI",
+  price: "S/ 139.90",
+  description: "Intenso rojo rubí que representa pasión y amor profundo. Perfecto para aniversarios y declaraciones de amor."
+},
+{
+  front: "/galeria-6.webp",
+  title: "MAR ROJO",
+  price: "S/ 124.90",
+  description: "Composición en tonos rojos vibrantes que evocan la intensidad del mar al atardecer. Para momentos apasionados."
+},
+{
+  front: "/galeria-7.webp",
+  title: "ALMA",
+  price: "S/ 119.90",
+  description: "Arreglo que conecta con lo más profundo del ser. Diseño minimalista con significado espiritual y emocional."
+},
+{
+  front: "/galeria-8.webp",
+  title: "AMOR DE VERANO",
+  price: "S/ 114.90",
+  description: "Colores vibrantes y frescos que capturan la esencia del verano y el amor juvenil. Alegre y energético."
+},
+{
+  front: "/galeria-9.webp",
+  title: "DELIRIO DE AMOR",
+  price: "S/ 99.90",
+  description: "Composición apasionada y exuberante que representa el amor en su máxima expresión. Para enamorados."
+},
+{
+  front: "/galeria-10.webp",
+  title: "AMOR MIO",
+  price: "S/ 89.90",
+  description: "Dulce y romántico, perfecto para expresar cariño sincero. Ideal para pequeños detalles que dicen mucho."
+},
+{
+  front: "/galeria-11.webp",
+  title: "AURORA",
+  price: "S/ 79.90",
+  description: "Tonos suaves que evocan los primeros rayos del amanecer. Simboliza nuevos comienzos y esperanza."
+},
+{
+  front: "/galeria-12.webp",
+  title: "CARMESI",
+  price: "S/ 74.90",
+  description: "Rojo carmesí intenso, elegante y sofisticado. Para ocasiones formales y demostraciones de respeto."
+},
+{
+  front: "/galeria-13.webp",
+  title: "GIRASOLES DE AMOR",
+  price: "S/ 59.90",
+  description: "Alegres girasoles que siguen la luz del sol. Simbolizan admiración, lealtad y energía positiva."
+},
+{
+  front: "/galeria-14.webp",
+  title: "ZOE",
+  price: "S/ 54.90",
+  description: "Nombre griego que significa 'vida'. Arreglo fresco y vital que celebra la existencia y alegría de vivir."
+},
+{
+  front: "/galeria-15.webp",
+  title: "MARIA",
+  price: "S/ 54.90",
+  description: "Clásico y eterno, como el nombre que lleva. Diseño atemporal perfecto para cualquier ocasión."
+},
+{
+  front: "/galeria-16.webp",
+  title: "ILYA",
+  price: "S/ 49.90",
+  description: "Moderno y contemporáneo con líneas limpias. Ideal para regalos a personas con estilo vanguardista."
+},
+{
+  front: "/galeria-17.webp",
+  title: "TULIP VELVET",
+  price: "S/ 39.90",
+  description: "Tulipanes aterciopelados en tonos elegantes. Perfectos para detalles pequeños pero significativos."
+},
+{
+  front: "/galeria-18.webp",
+  title: "MINI RUBÍ",
+  price: "S/ 34.90",
+  version: "Versión mini",
+  description: "Pequeño pero intenso, mantiene la esencia del Rubí en un formato compacto y accesible."
+}
+      ].map((item, index) => (
+        <div class="group relative animate-fade-in-up" style={{ animationDelay: `${index * 0.3}s` }}>
+          <!-- Contenedor de tarjeta flip -->
+          <div class="relative h-[400px] lg:h-[450px] rounded-3xl overflow-hidden cursor-pointer perspective-1000">
+            <!-- Cara frontal -->
+            <div class="absolute inset-0 w-full h-full backface-hidden transition-all duration-700 transform-style-3d group-hover:rotate-y-180">
+              <div class="relative w-full h-full">
+                <img
+                  src={item.front}
+                  alt={`${item.title} - Ginevra Flores`}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                
+                <!-- Badge de nuevo o destacado -->
+                {index < 4 && (
+                  <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
+                    <span class="text-xs font-semibold text-primary">✨ Destacado</span>
+                  </div>
+                )}
+                
+                <!-- Info en frontal -->
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-0 group-hover:translate-y-2 transition-transform duration-300">
+                  <h3 class="text-xl font-semibold text-white mb-1">{item.title}</h3>
+                  <div class="flex items-center justify-between">
+                    <span class="text-lg font-bold text-white">{item.price}</span>
+                    <span class="text-white/80 text-sm flex items-center gap-1">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Indicador de hover (solo en desktop) -->
+          <div class="absolute -top-3 -right-3 bg-primary text-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:block">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA final -->
+    <div class="text-center mt-16 lg:mt-20 animate-fade-in-up" style="animation-delay: 0.7s">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-6 lg:p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-primary/10 shadow-lg">
+        <div class="text-left">
+          <h4 class="font-serif text-xl lg:text-2xl text-primary mb-2">¿No encuentras lo que buscas?</h4>
+          <p class="text-secondary/80 mb-4">Creamos arreglos personalizados según tus necesidades.</p>
+        </div>
+        <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/cta relative bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 whitespace-nowrap flex items-center gap-3"
+          >
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span class="relative z-10">Consultar por diseño personalizado</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 rounded-full opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+          </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animaciones para la galería */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Efecto 3D para flip cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Animaciones personalizadas */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  /* Clases reutilizadas */
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.05;
+    }
+    50% {
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    33% {
+      transform: translateY(-10px) translateX(10px);
+    }
+    66% {
+      transform: translateY(5px) translateX(-5px);
+    }
+  }
+
+  /* Mejoras de line clamp */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .perspective-1000 {
+      perspective: 800px;
+    }
+  }
+</style>
+
+<script>
+  // Optional: Add click functionality for mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.perspective-1000');
+    
+    cards.forEach(card => {
+      card.addEventListener('click', function(this: HTMLElement, e: Event) {
+        // Don't trigger flip if clicking on WhatsApp button
+        if (e.target && (e.target as Element).closest('a[href*="whatsapp"]')) {
+          return;
+        }
+        
+        if (window.innerWidth < 1024) { // Only on mobile/tablet
+          this.querySelector('.group-hover\\:rotate-y-180')?.classList.toggle('rotate-y-180');
+          this.querySelector('.group-hover\\:rotate-y-0')?.classList.toggle('rotate-y-0');
+        }
+      });
+    });
+  });
+</script>
