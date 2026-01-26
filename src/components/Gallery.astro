@@ -225,7 +225,8 @@ const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
 
             <!-- Cara trasera (descripción) -->
             <!-- En la parte trasera de cada tarjeta, reemplaza el contenido por: -->
-<div class="absolute inset-0 w-full h-full backface-hidden transition-all duration-700 transform-style-3d rotate-y-180 bg-gradient-to-br from-primary/10 to-secondary/10 card-back">
+<div class="absolute inset-0 w-full h-full backface-hidden transition-all duration-700 opacity-0
+ transform-style-3d rotate-y-180 bg-gradient-to-br from-primary/10 to-secondary/10 card-back">
   <div class="relative w-full h-full p-6 flex flex-col justify-between">
     <!-- Botón para cerrar -->
     <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary hover:scale-110 transition-transform duration-300 close-btn" aria-label="Cerrar detalles">
@@ -446,6 +447,25 @@ const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: rgba(59, 130, 246, 0.5);
 }
+
+/* FIX MOBILE: evitar que la cara trasera se muestre sin click */
+@media (max-width: 1023px) {
+  .card-back {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .card-active .card-back {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .card-active .card-front {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 </style>
 
 <script>
