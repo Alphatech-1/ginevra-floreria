@@ -446,38 +446,84 @@ const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: rgba(59, 130, 246, 0.5);
 }
+
+/* ===== FIX FLIP 3D PARA IPHONE / SAFARI ===== */
+
+.card-container {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Estado inicial correcto */
+.card-front { 
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card-back  { 
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Estado cuando la tarjeta está activa */
+.card-active .card-front { transform: rotateY(180deg); }
+.card-active .card-back  { transform: rotateY(0deg); }
+
+/* 🔥 HACK ESPECIAL SOLO PARA iPHONE */
+@supports (-webkit-touch-callout: none) {
+  .card-back {
+    transform: rotateY(180deg) translateZ(1px);
+  }
+  .card-active .card-back {
+    transform: rotateY(0deg) translateZ(1px);
+  }
+}
+
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card-container');
 
-  function toggleCard(card) {
+  const toggleCard = (card) => {
     card.classList.toggle('card-active');
-  }
+  };
 
-  function closeOtherCards(currentCard) {
+  const closeOtherCards = (currentCard) => {
     cards.forEach(card => {
-      if (card !== currentCard && card.classList.contains('card-active')) {
+      if (card !== currentCard) {
         card.classList.remove('card-active');
       }
     });
-  }
+  };
 
   cards.forEach(card => {
 
-    // CLICK EN TARJETA
-    card.addEventListener('click', function (e) {
+    card.addEventListener('click', (e) => {
       const target = e.target;
 
-      // No activar flip si se hace click en:
+      // Evitar que botones internos activen el flip
       if (
         target.closest('.close-btn') ||
+        target.closest('a[href*="wa.me"]') ||
         target.closest('a[href*="whatsapp"]')
       ) return;
 
-      if (card.classList.contains('card-active')) {
-        // Si ya está abierta y hacen click fuera del contenido, cerrar
+      const isActive = card.classList.contains('card-active');
+
+      if (isActive) {
+        // Si ya está abierta y tocan fuera del contenido trasero → cerrar
         if (!target.closest('.card-back')) {
           toggleCard(card);
         }
@@ -490,29 +536,32 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // BOTÓN CERRAR
+    // Botón cerrar
     const closeBtn = card.querySelector('.close-btn');
     if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
+      closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         card.classList.remove('card-active');
       });
     }
+
   });
 
-  // Cerrar si se hace click fuera
-  document.addEventListener('click', function (e) {
+  // Click fuera → cerrar todo
+  document.addEventListener('click', (e) => {
     if (!e.target.closest('.card-container')) {
       cards.forEach(card => card.classList.remove('card-active'));
     }
   });
 
-  // Cerrar con ESC
-  document.addEventListener('keydown', function (e) {
+  // ESC → cerrar todo
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       cards.forEach(card => card.classList.remove('card-active'));
     }
   });
+
 });
 </script>
+
 
