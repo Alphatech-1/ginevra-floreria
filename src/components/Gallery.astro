@@ -196,24 +196,24 @@ const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
 <div class="absolute top-4 left-4 z-20">
   {index === 0 ? (
     <div class="bg-white/95 rounded-full px-3 py-1 shadow-lg">
-      <span class="text-2xl font-bold text-primary">✨ Edición Limitada</span>
+      <span class="text-xs font-bold text-primary">✨ Edición Limitada</span>
     </div>
   ) : index < 4 ? (
     <div class="bg-white/95 rounded-full px-3 py-1 shadow-lg">
-      <span class="text-2xl font-bold text-primary">🔥 Destacado</span>
+      <span class="text-xs font-bold text-primary">🔥 Destacado</span>
     </div>
   ) : (
     <div class="bg-white/95 rounded-full px-3 py-1 shadow-lg">
-      <span class="text-2xl font-bold text-primary">🎯 15% descuento</span>
+      <span class="text-xs font-bold text-primary">🎯 15% descuento</span>
     </div>
   )}
 </div>
                 
                 <!-- Info en frontal -->
                 <div class="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 class="text-xl font-semibold text-white mb-1 truncate">{item.title}</h3>
+                  <h3 class="text-sm font-semibold text-white mb-1 truncate">{item.title}</h3>
                   <div class="flex items-center justify-between">
-                    <span class="text-3xl font-bold text-white">{item.price}</span>
+                    <span class="text-1xl font-bold text-white">{item.price}</span>
                     <div class="flex items-center gap-1">
                       <span class="text-white/70 text-sm">Click para detalles</span>
                       <i class="fas fa-info-circle text-white/70 ml-1"></i>
@@ -446,136 +446,120 @@ const whatsappLink = "https://wa.me/51934809665"; // CAMBIA ESTE LINK
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: rgba(59, 130, 246, 0.5);
 }
+
+/* ===== FIX FLIP 3D PARA IPHONE / SAFARI ===== */
+
+.card-container {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Estado inicial correcto */
+.card-front { 
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card-back  { 
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Estado cuando la tarjeta está activa */
+.card-active .card-front { transform: rotateY(180deg); }
+.card-active .card-back  { transform: rotateY(0deg); }
+
+/* 🔥 HACK ESPECIAL SOLO PARA iPHONE */
+@supports (-webkit-touch-callout: none) {
+  .card-back {
+    transform: rotateY(180deg) translateZ(1px);
+  }
+  .card-active .card-back {
+    transform: rotateY(0deg) translateZ(1px);
+  }
+}
+
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Seleccionar todas las tarjetas
-    const cards = document.querySelectorAll('.card-container');
-    
-    // Función para activar/desactivar el flip
-    function toggleCard(card: { classList: { toggle: (arg0: string) => void; contains: (arg0: string) => any; }; querySelector: (arg0: string) => any; }) {
-      card.classList.toggle('card-active');
-      
-      // Si está activo, asegurarnos de que las clases de transformación estén correctas
-      if (card.classList.contains('card-active')) {
-        const front = card.querySelector('.card-front') as HTMLElement | null;
-        const back = card.querySelector('.card-back') as HTMLElement | null;
-        
-        if (front) front.style.transform = 'rotateY(180deg)';
-        if (back) back.style.transform = 'rotateY(0)';
-      } else {
-        const front = card.querySelector('.card-front') as HTMLElement | null;
-        const back = card.querySelector('.card-back') as HTMLElement | null;
-        
-        if (front) front.style.transform = 'rotateY(0)';
-        if (back) back.style.transform = 'rotateY(180deg)';
-      }
-    }
-    
-    // Función para cerrar todas las tarjetas excepto la especificada
-    function closeOtherCards(currentCard: Element) {
-      cards.forEach(card => {
-        if (card !== currentCard && card.classList.contains('card-active')) {
-          card.classList.remove('card-active');
-          const front = card.querySelector('.card-front') as HTMLElement | null;
-          const back = card.querySelector('.card-back') as HTMLElement | null;
-          
-          if (front) front.style.transform = 'rotateY(0)';
-          if (back) back.style.transform = 'rotateY(180deg)';
-        }
-      });
-    }
-    
-    // Agregar event listeners a cada tarjeta
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card-container');
+
+  const toggleCard = (card) => {
+    card.classList.toggle('card-active');
+  };
+
+  const closeOtherCards = (currentCard) => {
     cards.forEach(card => {
-      // Click en la tarjeta (excepto en botones específicos)
-      card.addEventListener('click', function(this: Element, e: Event) {
-        // No hacer nada si se hace clic en:
-        // 1. El botón de cerrar
-        // 2. El enlace de WhatsApp
-        const target = e.target as HTMLElement;
-        if (target && (target.closest('.close-btn') || target.closest('a[href*="whatsapp"]'))) {
-          return;
+      if (card !== currentCard) {
+        card.classList.remove('card-active');
+      }
+    });
+  };
+
+  cards.forEach(card => {
+
+    card.addEventListener('click', (e) => {
+      const target = e.target;
+
+      // Evitar que botones internos activen el flip
+      if (
+        target.closest('.close-btn') ||
+        target.closest('a[href*="wa.me"]') ||
+        target.closest('a[href*="whatsapp"]')
+      ) return;
+
+      const isActive = card.classList.contains('card-active');
+
+      if (isActive) {
+        // Si ya está abierta y tocan fuera del contenido trasero → cerrar
+        if (!target.closest('.card-back')) {
+          toggleCard(card);
         }
-        
-        // Si la tarjeta ya está activa y se hace clic fuera del contenido, cerrarla
-        if (this.classList.contains('card-active') && !(e.target as Element).closest('.card-back')) {
-          toggleCard(this);
-        } else if (!this.classList.contains('card-active')) {
-          // En móvil, cerrar otras tarjetas antes de abrir una nueva
-          if (window.innerWidth < 1024) {
-            closeOtherCards(this);
-          }
-          toggleCard(this);
-        }
-      });
-      
-      // Botón de cerrar
-      const closeBtn = card.querySelector('.close-btn') as HTMLElement | null;
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-          e.stopPropagation(); // Prevenir que el evento llegue a la tarjeta
-          card.classList.remove('card-active');
-          const front = card.querySelector('.card-front') as HTMLElement | null;
-          const back = card.querySelector('.card-back') as HTMLElement | null;
-          
-          if (front) front.style.transform = 'rotateY(0)';
-          if (back) back.style.transform = 'rotateY(180deg)';
-        });
-      }
-    });
-    
-    // Cerrar tarjetas al hacer clic fuera
-    document.addEventListener('click', function(e) {
-      const target = e.target as HTMLElement | null;
-      if (!target || !target.closest('.card-container')) {
-        cards.forEach(card => {
-          if (card.classList.contains('card-active')) {
-            card.classList.remove('card-active');
-            const front = card.querySelector('.card-front') as HTMLElement | null;
-            const back = card.querySelector('.card-back') as HTMLElement | null;
-            
-            if (front) front.style.transform = 'rotateY(0)';
-            if (back) back.style.transform = 'rotateY(180deg)';
-          }
-        });
-      }
-    });
-    
-    // Cerrar tarjetas con la tecla ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        cards.forEach(card => {
-          if (card.classList.contains('card-active')) {
-            card.classList.remove('card-active');
-            const front = card.querySelector('.card-front') as HTMLElement | null;
-            const back = card.querySelector('.card-back') as HTMLElement | null;
-            
-            if (front) front.style.transform = 'rotateY(0)';
-            if (back) back.style.transform = 'rotateY(180deg)';
-          }
-        });
-      }
-    });
-    
-    // Ajustar para pantallas pequeñas
-    function handleResponsive() {
-      if (window.innerWidth < 1024) {
-        // En móvil/tablet, solo una tarjeta activa a la vez
-        cards.forEach(card => {
-          card.style.cursor = 'pointer';
-        });
       } else {
-        // En desktop, múltiples tarjetas pueden estar activas
-        cards.forEach(card => {
-          card.style.cursor = 'pointer';
-        });
+        // En móvil solo una abierta
+        if (window.innerWidth < 1024) {
+          closeOtherCards(card);
+        }
+        toggleCard(card);
       }
+    });
+
+    // Botón cerrar
+    const closeBtn = card.querySelector('.close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.remove('card-active');
+      });
     }
-    
-    // Inicializar
-    handleResponsive();
-    window.addEventListener('resize', handleResponsive);
+
   });
+
+  // Click fuera → cerrar todo
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.card-container')) {
+      cards.forEach(card => card.classList.remove('card-active'));
+    }
+  });
+
+  // ESC → cerrar todo
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      cards.forEach(card => card.classList.remove('card-active'));
+    }
+  });
+
+});
 </script>
